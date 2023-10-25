@@ -56,8 +56,8 @@ class BadgeColorPrimaryResource extends Resource
     {
         return [
             'index' => Pages\ListBadgeColorPrimaries::route('/'),
-            'create' => Pages\CreateBadgeColorPrimary::route('/create'),
-            'edit' => Pages\EditBadgeColorPrimary::route('/{record}/edit'),
+            // 'create' => Pages\CreateBadgeColorPrimary::route('/create'),
+            // 'edit' => Pages\EditBadgeColorPrimary::route('/{record}/edit'),
         ];
     }
 }
