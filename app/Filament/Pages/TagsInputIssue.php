@@ -19,7 +19,8 @@ class TagsInputIssue extends Page implements HasForms
     protected function getFormSchema(): array
     {
         return [
-            TagsInput::make('tags'),
+            TagsInput::make('tags')
+                ->helperText('Copy some texts and paste into the field.'),
         ];
     }
 }
