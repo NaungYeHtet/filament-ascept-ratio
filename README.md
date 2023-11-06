@@ -1,1 +1,5 @@
-got to "/tags-input-issue"
+composer install
+
+php artisan migrate --seed
+
+got to "/tags"
