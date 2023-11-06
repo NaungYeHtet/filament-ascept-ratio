@@ -15,6 +15,8 @@ class UnexceptedBehavier extends Page implements HasForms
 
     protected static string $view = 'filament.pages.unexpected-behavier';
 
+    protected static bool $shouldRegisterNavigation = false;
+
     public ?array $tags = [];
 
     protected function getFormSchema(): array

@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Spatie\Translatable\HasTranslations;
 
-class Tag extends Model
+class Option extends Model
 {
     use HasFactory, HasTranslations;
 
     public $translatable = ['name'];
 
-    public function options(): BelongsToMany
+    public function tags(): BelongsToMany
     {
-        return $this->belongsToMany(Option::class, 'option_tag');
+        return $this->belongsToMany(Tag::class, 'option_tag');
     }
 }

@@ -12,7 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Tag::factory(10)->create();
+        \App\Models\Tag::factory(10)
+            ->has(\App\Models\Option::factory()->count(3), 'options')->create();
+        // \App\Models\Option::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

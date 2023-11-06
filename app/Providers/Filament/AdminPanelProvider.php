@@ -2,13 +2,12 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Pages\TagsInputIssue;
-use App\Filament\Pages\UnexceptedBehavier;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Panel;
 use Filament\PanelProvider;
+use Filament\SpatieLaravelTranslatablePlugin;
 use Filament\Support\Colors\Color;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -50,6 +49,10 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 // Authenticate::class,
+            ])
+            ->plugins([
+                SpatieLaravelTranslatablePlugin::make()
+                    ->defaultLocales(['en', 'my']),
             ]);
     }
 }

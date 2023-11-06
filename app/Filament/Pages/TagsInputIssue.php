@@ -14,6 +14,8 @@ class TagsInputIssue extends Page implements HasForms
 
     protected static string $view = 'filament.pages.tags-input-issue';
 
+    protected static bool $shouldRegisterNavigation = false;
+
     public ?array $tags = [];
 
     protected function getFormSchema(): array
