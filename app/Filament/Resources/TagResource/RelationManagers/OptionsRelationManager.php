@@ -44,7 +44,7 @@ class OptionsRelationManager extends RelationManager
             ])
             ->actions([
                 // Tables\Actions\EditAction::make(),
-                // Tables\Actions\DeleteAction::make(),
+                Tables\Actions\DetachAction::make(),
             ])
             ->bulkActions([
                 // Tables\Actions\BulkActionGroup::make([
