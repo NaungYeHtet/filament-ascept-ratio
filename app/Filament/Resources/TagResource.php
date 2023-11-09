@@ -21,6 +21,8 @@ class TagResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $recordTitleAttribute = 'custom_name';
+
     public static function form(Form $form): Form
     {
         return $form

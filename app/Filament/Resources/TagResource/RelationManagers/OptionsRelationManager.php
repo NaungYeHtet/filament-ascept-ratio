@@ -17,6 +17,8 @@ class OptionsRelationManager extends RelationManager
 
     protected static string $relationship = 'options';
 
+    protected static ?string $recordTitleAttribute = 'custom_name';
+
     public function form(Form $form): Form
     {
         return $form
@@ -30,7 +32,7 @@ class OptionsRelationManager extends RelationManager
     public function table(Table $table): Table
     {
         return $table
-            ->recordTitleAttribute('name')
+            // ->recordTitleAttribute('custom_name')
             ->columns([
                 Tables\Columns\TextColumn::make('name'),
             ])
