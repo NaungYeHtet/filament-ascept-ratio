@@ -13,6 +13,7 @@ use Filament\Tables;
 use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\SelectColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
 class TagResource extends Resource
@@ -43,6 +44,7 @@ class TagResource extends Resource
                             'active' => 'Active',
                             'inactive' => 'Inactive',
                         ]),
+                    ToggleColumn::make('is_admin')
                 ]),
             ])
             ->filters([
