@@ -3,11 +3,11 @@
 namespace App\Filament\Resources\TagResource\RelationManagers;
 
 use Filament\Forms;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\Concerns\Translatable;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
+use Filament\Tables\Actions\AttachAction;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 
@@ -38,9 +38,16 @@ class OptionsRelationManager extends RelationManager
                 //
             ])
             ->headerActions([
-                Tables\Actions\AttachAction::make()
-                    ->preloadRecordSelect()
-                    ->recordSelect(fn (Select $select) => $select->getOptionLabelFromRecordUsing(fn (Model $record) => $record->name)),
+                AttachAction::make()
+                    ->form(fn (AttachAction $action): array => [
+                        Forms\Components\Select::make('tags')
+                            ->relationship('tags', 'name')
+                            ->multiple()
+                            ->getOptionLabelFromRecordUsing(fn (Model $record) => $record->name)
+                            ->preload()
+                            ->searchable()
+                            ->required(),
+                    ]),
             ])
             ->actions([
                 // Tables\Actions\EditAction::make(),
